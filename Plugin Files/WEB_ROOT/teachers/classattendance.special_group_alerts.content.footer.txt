@@ -14,10 +14,8 @@ $j( document ).ready(function(){
 		]"~(1)":"~(2)",[/tlist_sql]"":""
 	};
     $j.each(alertRows1, function(ccid, studcid) {
-	  $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('&nbsp;<a href="/teachers/alerts/special_group_alert_1.html?frn=001'+ studcid +'" class="dialogAlert"  title="Special Group Alert 1"><img src="/images/alert_group_1.gif" alt="Special Group Alert 1" width="18" height="18" style="vertical-align: text-bottom;"></a>');
+	  $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('&nbsp;<a href="/teachers/alerts/special_group_alert_1.html?frn=001'+ studcid +'" class="dialogAlert"  title="Special Group Alert 1"><img src="/images/alert_group_1.svg" alt="Special Group Alert 1" width="18" height="18" style="vertical-align: text-bottom;"></a>');
     });
-    // Setup the dialog since dialogM only gets called on page load 
-    $j('a.dialogAlert').live('click',psDialog);
   });
   $j(function(){
     var alertRows2 = {
@@ -32,10 +30,8 @@ $j( document ).ready(function(){
 		]"~(1)":"~(2)",[/tlist_sql]"":""
 	};
     $j.each(alertRows2, function(ccid, studcid) {
-	  $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('&nbsp;<a href="/teachers/alerts/special_group_alert_2.html?frn=001'+ studcid +'" class="dialogAlert"  title="Special Group Alert 2"><img src="/images/alert_group_2.gif" alt="Special Group Alert 2" width="18" height="18" style="vertical-align: text-bottom;"></a>');
+	  $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('&nbsp;<a href="/teachers/alerts/special_group_alert_2.html?frn=001'+ studcid +'" class="dialogAlert"  title="Special Group Alert 2"><img src="/images/alert_group_2.svg" alt="Special Group Alert 2" width="18" height="18" style="vertical-align: text-bottom;"></a>');
     });
-    // Setup the dialog since dialogM only gets called on page load 
-    $j('a.dialogAlert').live('click',psDialog);
   });
   $j(function(){
     var alertRows3 = {
@@ -50,11 +46,27 @@ $j( document ).ready(function(){
 		]"~(1)":"~(2)",[/tlist_sql]"":""
 	};
     $j.each(alertRows3, function(ccid, studcid) {
-	  $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('&nbsp;<a href="/teachers/alerts/special_group_alert_3.html?frn=001'+ studcid +'" class="dialogAlert"  title="Special Group Alert 2"><img src="/images/alert_group_3.gif" alt="Special Group Alert 3" width="18" height="18" style="vertical-align: text-bottom;"></a>');
+	  $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('&nbsp;<a href="/teachers/alerts/special_group_alert_3.html?frn=001'+ studcid +'" class="dialogAlert"  title="Special Group Alert 3"><img src="/images/alert_group_3.svg" alt="Special Group Alert 3" width="18" height="18" style="vertical-align: text-bottom;"></a>');
     });
-    // Setup the dialog since dialogM only gets called on page load 
-    $j('a.dialogAlert').live('click',psDialog);
   });
+  $j(function(){
+    var alertRows4 = {
+		~[tlist_sql;
+		select cc.id, s.dcid
+		from students s
+		join u_sg_alerts sg on sg.studentsdcid = s.dcid
+		inner join cc on cc.studentid = s.id 
+		and cc.sectionid = ~(gpv.sectionid;sqlText) 
+		and to_date('~(gpv.att_date;sqlText)','~[datetext:mmddyyyy]') between cc.dateenrolled and cc.dateleft-1	
+		and sg.ALERT_4 = 1
+		]"~(1)":"~(2)",[/tlist_sql]"":""
+	};
+    $j.each(alertRows4, function(ccid, studcid) {
+	  $j('tr[id=ccid_' + ccid + '] td:eq(1)').append('&nbsp;<a href="/teachers/alerts/special_group_alert_4.html?frn=001'+ studcid +'" class="dialogAlert"  title="Special Group Alert 4"><img src="/images/alert_group_4.svg" alt="Special Group Alert 4" width="18" height="18" style="vertical-align: text-bottom;"></a>');
+    });
+  });
+  // Setup the dialog since dialogM only gets called on page load 
+  $j('a.dialogAlert').live('click',psDialog);
 });
 
 </script>
