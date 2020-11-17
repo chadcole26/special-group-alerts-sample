@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Custom Alert Template Created by Chad Cole - v1.0 7/7/2020 -->
+    <!-- This page is based off the Admin Student template that comes with PowerSchool SIS -->
+    <title>Special Group Alerts</title>
+    <!-- required scripts -->
+    ~[wc:commonscripts] 
+    <!-- Required style sheets: screen.css, and print.css -->
+    <link href="/images/css/screen.css" rel="stylesheet" media="screen">
+    <link href="/images/css/print.css" rel="stylesheet" media="print">
+  </head> 
+  <body> 
+    ~[wc:admin_header_frame_css]
+     <!-- breadcrumb start -->
+     <a href="/admin/home.html" target="_top">Start Page</a> &gt; <a href="/admin/students/home.html?selectstudent=nosearch" target="_top">Student Selection</a> &gt; Special Group Alerts
+     <!-- breadcrumb end -->
+    ~[wc:admin_navigation_frame_css]
+    <!-- start of main menu and content -->
+    ~[wc:title_student_begin_css]Special Group Alerts~[wc:title_student_end_css]
+    <form action="/~[self.page]?frn=~(studentfrn)&changesSaved=true" method="POST">
+      <!-- start of content area -->
+      ~[if.gpv.changesSaved=true]<div class="feedback-confirm">~[text:psx.common.changes_recorded]</div>[/if]
+      <div class="box-round">
+        <h2>Special Group Alerts</h2>
+          <h3>Special Group Alert 1</h3>
+          <table>
+        	<tr>
+        		<td style="width:75px"><img src="/images/alert_group_1.gif" width="50" height="50" alt="Special Group Alert 1 Icon" /></td>
+        		<td  style="width:525px"><input type="checkbox" name="[STUDENTS.U_SG_ALERTS]ALERT_1" value="1" />&nbsp;&nbsp;<i>Check the box and submit to make the alert appear.</td>
+        	</tr>
+          </table>
+          <h3>Special Group Alert 2</h3>
+          <table>
+        	<tr>
+        		<td style="width:75px"><img src="/images/alert_group_2.gif" width="50" height="50" alt="Special Group Alert 2 Icon" /></td>
+        		<td  style="width:525px"><input type="checkbox" name="[STUDENTS.U_SG_ALERTS]ALERT_2" value="1" />&nbsp;&nbsp;<i>Check the box and submit to make the alert appear.</td>
+        	</tr>
+          </table>
+          <h3>Special Group Alert 3</h3>
+          <table>
+        	<tr>
+        		<td style="width:75px"><img src="/images/alert_group_3.gif" width="50" height="50" alt="Special Group Alert 3 Icon" /></td>
+        		<td  style="width:525px"><input type="checkbox" name="[STUDENTS.U_SG_ALERTS]ALERT_3" value="1" />&nbsp;&nbsp;<i>Check the box and submit to make the alert appear.</td>
+        	</tr>
+          </table>
+
+        <div class="button-row">&nbsp;<input type="hidden" name="ac" value="prim">~[submitbutton]</div>
+      </div>
+    </form>
+    <!-- end of content area -->
+    ~[wc:admin_footer_frame_css]
+  </body> 
+</html>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<psExtension xmlns="http://www.powerschool.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.powerschool.com psextension.xsd">
+    <extensionname>U_SG_ALERTS</extensionname>
+    <extendedTable coreTable="Students" dbTableName="U_SG_ALERTS" comment="">
+        <field name="ALERT_1" type="Boolean"/>
+        <field name="ALERT_2" type="Boolean"/>
+        <field name="ALERT_3" type="Boolean"/>
+    </extendedTable>
+</psExtension>
